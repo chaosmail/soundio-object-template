@@ -26,7 +26,7 @@
 		var outputNode = audio.createGain();
 
 		// Initialise this as an AudioObject.
-		AudioObject.call(this, inputNode, outputNode, {
+		AudioObject.call(this, audio, inputNode, outputNode, {
 			gain: {
 				param: inputNode.gain,
 				curve: 'linear',
