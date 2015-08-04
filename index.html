@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="">
+	<meta name="description" content="">
+	<title>Soundio - object template</title>
+</head>
+
+<body>
+	<!-- Include the Soundio library (not included in this template repo - get
+	     it from github.com/soundio/soundio -->
+	<script src="js/soundio.js"></script>
+
+	<!-- Include the my-object constructor -->
+	<script src="js/soundio.my-object.js"></script>
+	<script>
+		var audioContext = new window.AudioContext();
+
+		// Create a new Soundio document
+		var soundio = Soundio();
+
+		// Create an object instance, passing in settings. The object instance
+		// will be given an id and can be found in soundio.objects.
+		var object = soundio.create('my-object', { gain: 0.5 });
+
+		// You can also create 'standalone' instances of my-object. You must
+		// pass in an audio context to do this. These are not given an id, and
+		// are not managed by an instance of Soundio.
+		var standalone = Soundio.create(audioContext, 'my-object', { gain: 0.5 });
+
+		// You can also create a new Soundio document with an instance of
+		// my-object already in the graph.
+		var soundio = Soundio({
+			objects: [
+				{ id: 1, type: "input" },
+				{ id: 2, type: "my-object", gain: 0.5 },
+				{ id: 3, type: "output" }
+			],
+
+			connections: [
+				{ source: 1, destination: 2 },
+				{ source: 2, destination: 3 }
+			]
+		});
+	</script>
+</body>
+</html>
