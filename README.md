@@ -2,7 +2,7 @@
 
 A template for writing Soundio plugin objects.
 
-See <code>js/soundio.my-object.js</code> for a code template.
+See <code><a href="blob/master/js/soundio.my-object.js">js/soundio.my-object.js</a></code> for a JavaScript template.
 
-See index.html for examples of how <code>my-object</code> can
+See <code><a href="blob/master/index.html">index.html</a></code> for examples of how <code>my-object</code> can
 be created in a Soundio object graph.
