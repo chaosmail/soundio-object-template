@@ -1,4 +1,4 @@
-# Soundio: object template
+# Soundio object template
 
 A template for writing Soundio plugin objects.
 
